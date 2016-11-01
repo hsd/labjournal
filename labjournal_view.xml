@@ -1,12 +1,45 @@
 <openerp>
   <data>
+    <!-- ACTIONS -->
+
     <!-- Labjournal purposes -->
     <record model="ir.actions.act_window" id="action_labjournalpurpose_form">
       <field name="name">Labjournal purposes</field>
       <field name="res_model">labjournal.purpose</field>
       <field name="view_mode">tree,form</field>
     </record>
-    
+
+      <!-- Labjournal main form -->
+    <record model="ir.actions.act_window" id="action_labjournal_form">
+      <field name="name">Labjournals</field>
+      <field name="res_model">labjournal.labjournal</field>
+      <field name="view_mode">tree,form</field>
+      <field name="search_view_id" ref="view_labjournal_search_form"/>
+      <field name="context">{'labjournal':'True'}</field>
+    </record>
+
+    <!--  Create an action for the form view -->
+    <!--  This requires a manual backport of revision 2119.1.1 in the codebase -->
+    <act_window name="Deactivate labjournals"
+                res_model="labjournal.deactivate"
+                src_model="labjournal.labjournal"
+                view_mode="form"
+                target="new"
+                multi="True"
+		key2="client_action_multi"
+                id="labjournal_deactivate_multi"/>
+
+    <!-- Same for the partner, show all labjournal of all people of the partner -->
+    <act_window
+	context="{'partner': active_id, 'labjournal': 'True'}"
+	domain="[('owner.id','=',active_id)]"
+	id="act_partner_labjournals"
+	name="Labjournals"
+	res_model="labjournal.labjournal"
+	src_model="res.partner"/>
+
+
+    <!-- VIEWS -->
     <!-- Labjournal purpose List definition -->
     <record model="ir.ui.view" id="labjournal_purpose_tree_view">
       <field name="name">labjournal.purpose.tree</field>
@@ -43,15 +76,7 @@
         </form>
       </field>
     </record>
-    
-    <!-- Labjournal main form -->
-    <record model="ir.actions.act_window" id="action_labjournal_form">
-      <field name="name">Labjournals</field>
-      <field name="res_model">labjournal.labjournal</field>
-      <field name="view_mode">tree,form</field>
-      <field name="search_view_id" ref="view_labjournal_search_form"/>
-      <field name="context">{'labjournal':'True'}</field>
-    </record>
+
   
     <!-- Labjournal list view -->
     <record model="ir.ui.view" id="labjournal_tree_view">
@@ -107,7 +132,7 @@
       </field>
     </record>
    
-    <!-- Menu items -->
+    <!-- MENUS -->
     <menuitem name="Labjournals" id="menu_config_labjournals" parent="stock.menu_stock_root"/>
     <menuitem name="Purposes" id="menu_config_labjournal_purposes"
 	      parent="menu_config_labjournals"
@@ -126,14 +151,6 @@
     <!-- 	res_model="labjournal.labjournal"  -->
     <!-- 	src_model="res.partner.address"/> -->
     
-    <!-- Same for the partner, show all labjournal of all people of the partner -->
-    <act_window
-	context="{'partner': active_id, 'labjournal': 'True'}"
-	domain="[('owner_id.partner_id','=',active_id)]"
-	id="act_partner_labjournals"
-	name="Labjournals"
-	res_model="labjournal.labjournal" 
-	src_model="res.partner"/>
 
     <!-- Create an action to archive the labjournal within the system -->
     <record model="ir.ui.view" id="labjournal_deactivation_form">
@@ -151,16 +168,6 @@
       </field>
     </record>
 
-    <!--  Create an action for the form view -->
-    <!--  This requires a manual backport of revision 2119.1.1 in the codebase -->
-    <act_window name="Deactivate labjournals"
-                res_model="labjournal.deactivate"
-                src_model="labjournal.labjournal"
-                view_mode="form"
-                target="new"
-                multi="True"
-		key2="client_action_multi"
-                id="labjournal_deactivate_multi"/>
 
     <!-- Create search / filter and grouping views -->
     <record id="view_labjournal_search_form" model="ir.ui.view">
