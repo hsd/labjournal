@@ -19,7 +19,6 @@
     </record>
 
     <!--  Create an action for the form view -->
-    <!--  This requires a manual backport of revision 2119.1.1 in the codebase -->
     <act_window name="Deactivate labjournals"
                 res_model="labjournal.deactivate"
                 src_model="labjournal.labjournal"
@@ -108,10 +107,11 @@
             <h1><field name="name" /></h1>
 	    <group>
               <field name="active" />
-	      <field name="purpose" colspan="4" select="2" on_change="onchange_purpose(use_end, purpose)"/>
+	      <field name="purpose" colspan="4" on_change="onchange_purpose(use_end, purpose)"/>
 	      <newline/>
-	  
-	      <field name="owner" colspan="4" />
+
+	      <!-- Only users of the system can be owners of a lab journal -->
+	      <field name="owner" colspan="4" domain="[('user_ids','!=',False)]"/>
 
 	      <group col="4" colspan="2">
 		<separator string="Tracking" colspan="4"/>
