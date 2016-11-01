@@ -1,0 +1,207 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* labjournal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-01 16:15+0100\n"
+"PO-Revision-Date: 2016-11-01 16:22+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.9\n"
+"Last-Translator: Marcel van der Boom <marcel@hsdev.com>\n"
+"Language: nl\n"
+
+#. module: labjournal
+#: field:labjournal.labjournal,active:0 field:labjournal.purpose,active:0
+msgid "Active"
+msgstr "Actief"
+
+#. module: labjournal
+#: field:labjournal.purpose,save_period:0
+msgid "Archive period in days"
+msgstr "Bewaartermijn in dagen"
+
+#. module: labjournal
+#: view:labjournal.deactivate:labjournal.labjournal_deactivation_form
+msgid "Cancel"
+msgstr "Annuleren"
+
+#. module: labjournal
+#: view:labjournal.deactivate:labjournal.labjournal_deactivation_form
+msgid "Create a list of labjournals to deactivate"
+msgstr "Maak een lijst van labjournalen om af te voeren"
+
+#. module: labjournal
+#: field:labjournal.deactivate,create_uid:0
+#: field:labjournal.labjournal,create_uid:0
+#: field:labjournal.purpose,create_uid:0
+msgid "Created by"
+msgstr "Aangemaakt door"
+
+#. module: labjournal
+#: field:labjournal.deactivate,create_date:0
+#: field:labjournal.labjournal,create_date:0
+#: field:labjournal.purpose,create_date:0
+msgid "Created on"
+msgstr "Aangemaakt op"
+
+#. module: labjournal
+#: model:ir.actions.act_window,name:labjournal.labjournal_deactivate_multi
+msgid "Deactivate labjournals"
+msgstr "Afvoeren labjournalen"
+
+#. module: labjournal
+#: field:labjournal.purpose,description:0
+msgid "Description"
+msgstr "Omschrijving"
+
+#. module: labjournal
+#: field:labjournal.deactivate,display_name:0
+#: field:labjournal.labjournal,display_name:0
+#: field:labjournal.purpose,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: labjournal
+#: sql_constraint:labjournal.labjournal:0
+msgid "Each labjournal must have a unique identifier"
+msgstr "Elk labjournaal moet een unieke identifier krijgen"
+
+#. module: labjournal
+#: sql_constraint:labjournal.purpose:0
+msgid "Each labjournal purpose must have a unique name"
+msgstr "Elk labjournaal-doel moet een unieke naam krijgen"
+
+#. module: labjournal
+#: field:labjournal.labjournal,use_end:0
+msgid "End of use"
+msgstr "Inleverdatum"
+
+#. module: labjournal
+#: field:labjournal.labjournal,expiration:0
+msgid "Expiration date"
+msgstr "Vervaldatum"
+
+#. module: labjournal
+#: view:labjournal.labjournal:labjournal.view_labjournal_search_form
+msgid "Group By"
+msgstr "Groeperen op"
+
+#. module: labjournal
+#: model:ir.model,name:labjournal.model_labjournal_deactivate
+msgid "Handle deactivation of labjournals"
+msgstr "Afvoeren van labjournalen behandelen"
+
+#. module: labjournal
+#: field:labjournal.deactivate,id:0 field:labjournal.labjournal,id:0
+#: field:labjournal.purpose,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: labjournal
+#: model:ir.actions.act_window,name:labjournal.action_labjournalpurpose_form
+#: model:ir.model,name:labjournal.model_labjournal_purpose
+#: view:labjournal.purpose:labjournal.labjournal_purpose_form_view
+#: view:labjournal.purpose:labjournal.labjournal_purpose_tree_view
+msgid "Labjournal purposes"
+msgstr "Labjournaal doelen"
+
+#. module: labjournal
+#: view:stock.production.lot:labjournal.production_lot_labjournals
+msgid "Labjournal use"
+msgstr "Labjournaal gebruik"
+
+#. module: labjournal
+#: model:ir.actions.act_window,name:labjournal.act_partner_labjournals
+#: model:ir.actions.act_window,name:labjournal.action_labjournal_form
+#: model:ir.model,name:labjournal.model_labjournal_labjournal
+#: model:ir.ui.menu,name:labjournal.menu_config_labjournals
+#: model:ir.ui.menu,name:labjournal.menu_labjournals
+#: field:labjournal.deactivate,labjournals:0
+#: view:labjournal.labjournal:labjournal.labjournal_form_view
+#: view:labjournal.labjournal:labjournal.labjournal_tree_view
+#: view:labjournal.labjournal:labjournal.view_labjournal_search_form
+#: field:stock.production.lot,labjournals:0
+msgid "Labjournals"
+msgstr "Labjournalen"
+
+#. module: labjournal
+#: field:labjournal.deactivate,__last_update:0
+#: field:labjournal.labjournal,__last_update:0
+#: field:labjournal.purpose,__last_update:0
+msgid "Last Modified on"
+msgstr "Laatste wijziging op"
+
+#. module: labjournal
+#: field:labjournal.deactivate,write_uid:0
+#: field:labjournal.labjournal,write_uid:0 field:labjournal.purpose,write_uid:0
+msgid "Last Updated by"
+msgstr "Laatste wijziging door"
+
+#. module: labjournal
+#: field:labjournal.deactivate,write_date:0
+#: field:labjournal.labjournal,write_date:0
+#: field:labjournal.purpose,write_date:0
+msgid "Last Updated on"
+msgstr "Laatste wijziging op"
+
+#. module: labjournal
+#: model:ir.model,name:labjournal.model_stock_production_lot
+msgid "Lot/Serial"
+msgstr "Lot/SerieNr"
+
+#. module: labjournal
+#: field:labjournal.labjournal,name:0 field:labjournal.purpose,name:0
+msgid "Name"
+msgstr "Naam"
+
+#. module: labjournal
+#: field:labjournal.labjournal,owner:0
+msgid "Owner"
+msgstr "Eigenaar"
+
+#. module: labjournal
+#: view:labjournal.deactivate:labjournal.labjournal_deactivation_form
+msgid "Proceed"
+msgstr "Doorgaan"
+
+#. module: labjournal
+#: field:labjournal.labjournal,production_lots:0
+msgid "Production lots"
+msgstr "Batchnummers"
+
+#. module: labjournal
+#: field:labjournal.labjournal,purpose:0
+msgid "Purpose"
+msgstr "Doel"
+
+#. module: labjournal
+#: model:ir.ui.menu,name:labjournal.menu_config_labjournal_purposes
+msgid "Purposes"
+msgstr "Doelen"
+
+#. module: labjournal
+#: view:labjournal.labjournal:labjournal.labjournal_form_view
+msgid "Related production lots"
+msgstr "Gerelateerde batches"
+
+#. module: labjournal
+#: field:labjournal.labjournal,removal:0
+msgid "Removal date"
+msgstr "Afvoerdatum"
+
+#. module: labjournal
+#: field:labjournal.labjournal,use_start:0
+msgid "Start of use"
+msgstr "Ingebruikname"
+
+#. module: labjournal
+#: view:labjournal.labjournal:labjournal.labjournal_form_view
+msgid "Tracking"
+msgstr "Traceerbaarheid"

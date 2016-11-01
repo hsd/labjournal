@@ -1,0 +1,210 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* labjournal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-01 15:13+0000\n"
+"PO-Revision-Date: 2016-11-01 15:13+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: labjournal
+#: field:labjournal.labjournal,active:0
+#: field:labjournal.purpose,active:0
+msgid "Active"
+msgstr ""
+
+#. module: labjournal
+#: field:labjournal.purpose,save_period:0
+msgid "Archive period in days"
+msgstr ""
+
+#. module: labjournal
+#: view:labjournal.deactivate:labjournal.labjournal_deactivation_form
+msgid "Cancel"
+msgstr ""
+
+#. module: labjournal
+#: view:labjournal.deactivate:labjournal.labjournal_deactivation_form
+msgid "Create a list of labjournals to deactivate"
+msgstr ""
+
+#. module: labjournal
+#: field:labjournal.deactivate,create_uid:0
+#: field:labjournal.labjournal,create_uid:0
+#: field:labjournal.purpose,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: labjournal
+#: field:labjournal.deactivate,create_date:0
+#: field:labjournal.labjournal,create_date:0
+#: field:labjournal.purpose,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: labjournal
+#: model:ir.actions.act_window,name:labjournal.labjournal_deactivate_multi
+msgid "Deactivate labjournals"
+msgstr ""
+
+#. module: labjournal
+#: field:labjournal.purpose,description:0
+msgid "Description"
+msgstr ""
+
+#. module: labjournal
+#: field:labjournal.deactivate,display_name:0
+#: field:labjournal.labjournal,display_name:0
+#: field:labjournal.purpose,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: labjournal
+#: sql_constraint:labjournal.labjournal:0
+msgid "Each labjournal must have a unique identifier"
+msgstr ""
+
+#. module: labjournal
+#: sql_constraint:labjournal.purpose:0
+msgid "Each labjournal purpose must have a unique name"
+msgstr ""
+
+#. module: labjournal
+#: field:labjournal.labjournal,use_end:0
+msgid "End of use"
+msgstr ""
+
+#. module: labjournal
+#: field:labjournal.labjournal,expiration:0
+msgid "Expiration date"
+msgstr ""
+
+#. module: labjournal
+#: view:labjournal.labjournal:labjournal.view_labjournal_search_form
+msgid "Group By"
+msgstr ""
+
+#. module: labjournal
+#: model:ir.model,name:labjournal.model_labjournal_deactivate
+msgid "Handle deactivation of labjournals"
+msgstr ""
+
+#. module: labjournal
+#: field:labjournal.deactivate,id:0
+#: field:labjournal.labjournal,id:0
+#: field:labjournal.purpose,id:0
+msgid "ID"
+msgstr ""
+
+#. module: labjournal
+#: model:ir.actions.act_window,name:labjournal.action_labjournalpurpose_form
+#: model:ir.model,name:labjournal.model_labjournal_purpose
+#: view:labjournal.purpose:labjournal.labjournal_purpose_form_view
+#: view:labjournal.purpose:labjournal.labjournal_purpose_tree_view
+msgid "Labjournal purposes"
+msgstr ""
+
+#. module: labjournal
+#: view:stock.production.lot:labjournal.production_lot_labjournals
+msgid "Labjournal use"
+msgstr ""
+
+#. module: labjournal
+#: model:ir.actions.act_window,name:labjournal.act_partner_labjournals
+#: model:ir.actions.act_window,name:labjournal.action_labjournal_form
+#: model:ir.model,name:labjournal.model_labjournal_labjournal
+#: model:ir.ui.menu,name:labjournal.menu_config_labjournals
+#: model:ir.ui.menu,name:labjournal.menu_labjournals
+#: field:labjournal.deactivate,labjournals:0
+#: view:labjournal.labjournal:labjournal.labjournal_form_view
+#: view:labjournal.labjournal:labjournal.labjournal_tree_view
+#: view:labjournal.labjournal:labjournal.view_labjournal_search_form
+#: field:stock.production.lot,labjournals:0
+msgid "Labjournals"
+msgstr ""
+
+#. module: labjournal
+#: field:labjournal.deactivate,__last_update:0
+#: field:labjournal.labjournal,__last_update:0
+#: field:labjournal.purpose,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: labjournal
+#: field:labjournal.deactivate,write_uid:0
+#: field:labjournal.labjournal,write_uid:0
+#: field:labjournal.purpose,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: labjournal
+#: field:labjournal.deactivate,write_date:0
+#: field:labjournal.labjournal,write_date:0
+#: field:labjournal.purpose,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: labjournal
+#: model:ir.model,name:labjournal.model_stock_production_lot
+msgid "Lot/Serial"
+msgstr ""
+
+#. module: labjournal
+#: field:labjournal.labjournal,name:0
+#: field:labjournal.purpose,name:0
+msgid "Name"
+msgstr ""
+
+#. module: labjournal
+#: field:labjournal.labjournal,owner:0
+msgid "Owner"
+msgstr ""
+
+#. module: labjournal
+#: view:labjournal.deactivate:labjournal.labjournal_deactivation_form
+msgid "Proceed"
+msgstr ""
+
+#. module: labjournal
+#: field:labjournal.labjournal,production_lots:0
+msgid "Production lots"
+msgstr ""
+
+#. module: labjournal
+#: field:labjournal.labjournal,purpose:0
+msgid "Purpose"
+msgstr ""
+
+#. module: labjournal
+#: model:ir.ui.menu,name:labjournal.menu_config_labjournal_purposes
+msgid "Purposes"
+msgstr ""
+
+#. module: labjournal
+#: view:labjournal.labjournal:labjournal.labjournal_form_view
+msgid "Related production lots"
+msgstr ""
+
+#. module: labjournal
+#: field:labjournal.labjournal,removal:0
+msgid "Removal date"
+msgstr ""
+
+#. module: labjournal
+#: field:labjournal.labjournal,use_start:0
+msgid "Start of use"
+msgstr ""
+
+#. module: labjournal
+#: view:labjournal.labjournal:labjournal.labjournal_form_view
+msgid "Tracking"
+msgstr ""
+
