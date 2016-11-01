@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <!-- Add noupdate=1 on deployment here -->
+  <data noupdate="1">
+
+    <!--  Sequences for labjournals  -->
+    <record id="seq_type_labjournal" model="ir.sequence.type">
+      <field name="name">Labjournals</field>
+      <field name="code">labjournal.labjournal</field>
+    </record>
+    
+    <record id="seq_labjournal" model="ir.sequence">
+      <field name="name">Labjournals</field>
+      <field name="code">labjournal.labjournal</field>
+      <field name="prefix"></field>
+      <field name="number_next">1</field>
+      <field name="number_increment">1</field>
+      <field name="padding">4</field>
+    </record>
+  </data>
+</openerp>

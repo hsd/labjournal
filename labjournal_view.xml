@@ -1,0 +1,163 @@
+<openerp>
+  <data>
+    <!-- Labjournal purposes -->
+    <record model="ir.actions.act_window" id="action_labjournalpurpose_form">
+      <field name="name">Labjournal purposes</field>
+      <field name="res_model">labjournal.purpose</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- Labjournal purpose List definition -->
+    <record model="ir.ui.view" id="labjournal_purpose_tree_view">
+      <field name="name">labjournal.purpose.tree</field>
+      <field name="model">labjournal.purpose</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+	<tree string="Labjournal purposes">
+          <field name="active" />
+          <field name="name" />
+          <!-- <field> name="description" /> -->
+          <field name="save_period" />
+	</tree>
+      </field>
+    </record>
+  
+    <!-- Labjournal purpose Form definition -->
+    <record model="ir.ui.view" id="labjournal_purpose_form_view">
+      <field name="name">labjournal.purpose.form</field>
+      <field name="model">labjournal.purpose</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="Labjournal purposes">
+	  <sheet>
+	    <label for="name" />
+            <h1><field name="name" select="1"/></h1>
+	    <group>
+              <field name="active" select="1"/>
+	      <field name="save_period" />
+	    </group>
+	    <group>
+	      <field name="description" select="1" colspan="4"/>
+	    </group>
+	  </sheet>
+        </form>
+      </field>
+    </record>
+    
+    <!-- Labjournal main form -->
+    <record model="ir.actions.act_window" id="action_labjournal_form">
+      <field name="name">Labjournals</field>
+      <field name="res_model">labjournal.labjournal</field>
+      <field name="view_mode">tree,form</field>
+      <field name="context">{'labjournal':'True'}</field>
+    </record>
+  
+    <!-- Labjournal list view -->
+    <record model="ir.ui.view" id="labjournal_tree_view">
+      <field name="name">labjournal.labjournal.tree</field>
+      <field name="model">labjournal.labjournal</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+	<tree string="Labjournals">
+          <field name="active" />
+          <field name="name" />
+	  <field name="owner"/>
+	  <field name="purpose"/>
+	  <field name="expiration"/>
+	  <field name="use_end" />
+	</tree>
+      </field>
+    </record>
+    
+    <!-- Labjournal form view -->
+    <record model="ir.ui.view" id="labjournal_form_view">
+      <field name="name">labjournal.labjournal.form</field>
+      <field name="model">labjournal.labjournal</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="Labjournals">
+	  <sheet>
+	    <label for="name" />
+            <h1><field name="name" select="1"/></h1>
+	    <group>
+              <field name="active" select="1"/>
+	      <field name="purpose" colspan="4" select="2" on_change="onchange_purpose(use_end, purpose)"/>
+	      <newline/>
+	  
+	      <field name="owner" colspan="4" select="1"/>
+
+	      <group col="4" colspan="2">
+		<separator string="Tracking" colspan="4"/>
+		<field name="use_start" />
+		<field name="use_end" on_change="onchange_use_end(use_end, purpose)" />
+		<field name="expiration" select="1" />
+		<field name="removal" />
+	      </group>
+
+	      <notebook colspan="4">
+		<page string="Related production lots">
+		  <field name="production_lots" nolabel="1"/>
+		</page>
+	      </notebook>
+	    </group>
+	  </sheet>
+        </form>
+      </field>
+    </record>
+   
+    <!-- Menu items -->
+    <menuitem name="Labjournals" id="menu_config_labjournals" parent="stock.menu_stock_root"/>
+    <menuitem name="Purposes" id="menu_config_labjournal_purposes"
+	      parent="menu_config_labjournals"
+	      action="action_labjournalpurpose_form"/>
+    <menuitem name="Labjournals" id="menu_labjournals"
+	      parent="menu_config_labjournals"
+	      action="action_labjournal_form"/>
+
+    
+    <!-- Create a window action in the partner address form to list labjournals -->
+    <!-- <act_window -->
+    <!-- 	context="{'partner_address': active_id, 'labjournal': 'True'}" -->
+    <!-- 	domain="[('owner_id','=',active_id)]" -->
+    <!-- 	id="act_partner_address_labjournals" -->
+    <!-- 	name="Labjournals" -->
+    <!-- 	res_model="labjournal.labjournal"  -->
+    <!-- 	src_model="res.partner.address"/> -->
+    
+    <!-- Same for the partner, show all labjournal of all people of the partner -->
+    <act_window
+	context="{'partner': active_id, 'labjournal': 'True'}"
+	domain="[('owner_id.partner_id','=',active_id)]"
+	id="act_partner_labjournals"
+	name="Labjournals"
+	res_model="labjournal.labjournal" 
+	src_model="res.partner"/>
+
+    <!-- Create an action to archive the labjournal within the system -->
+    <record model="ir.ui.view" id="labjournal_deactivation_form">
+      <field name="name">labjournal.deactivation.form</field>
+      <field name="model">labjournal.deactivate</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+	<form>
+	  <group string="Create a list of labjournals to deactivate" expand="1" colspan="4" col="2">
+            <field name="labjournals" colspan="4" width="600" height="200"  widget="many2many" nolabel="1" />
+	   </group>
+	  <button string="Proceed" name="_action_deactivate_labjournals" type="object" icon="gtk-apply" />
+	  <button string="Cancel"  special="cancel" type="object" icon="gtk-cancel" />
+	</form>
+      </field>
+    </record>
+
+    <!--  Create an action for the form view -->
+    <!--  This requires a manual backport of revision 2119.1.1 in the codebase -->
+    <act_window name="Deactivate labjournals"
+                res_model="labjournal.deactivate"
+                src_model="labjournal.labjournal"
+                view_mode="form"
+                target="new"
+                multi="True"
+		key2="client_action_multi"
+                id="labjournal_deactivate_multi"/>
+  </data>
+</openerp>

@@ -1,0 +1,20 @@
+<openerp>
+  <data>
+    <!-- Extension of the production lots with the relation to
+	 labjournals -->
+    <record model="ir.ui.view" id="production_lot_labjournals" >
+      <field name="name">stock.production.lot.view.labjournals</field>
+      <field name="model">stock.production.lot</field>
+      <field name="inherit_id" ref="stock.view_production_lot_form"/>
+      <field name="arch" type="xml">
+	<data>
+	  <notebook position="inside">
+	    <page string="Labjournal use">
+	      <field name="labjournals" colspan="4" nolabel="1"/>
+	    </page>
+	  </notebook>
+	</data>
+      </field>
+    </record>
+  </data>
+</openerp>
