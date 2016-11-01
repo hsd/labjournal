@@ -1,5 +1,21 @@
 <openerp>
   <data>
+    <!-- SEARCH -->
+    <!-- Create search / filter and grouping views -->
+    <record id="view_labjournal_search_form" model="ir.ui.view">
+      <field name="name">labjournal.labjournal.search.form</field>
+      <field name="model">labjournal.labjournal</field>
+      <field name="arch" type="xml">
+	<search string="Labjournals">
+	  <field name="name"/>
+	  <field name="owner"/>
+	  <group expand="0" string="Group By">
+	    <filter name="purpose" context="{'group_by':'purpose'}"/>
+	  </group>
+	</search>
+      </field>
+    </record>
+
     <!-- ACTIONS -->
 
     <!-- Labjournal purposes -->
@@ -169,20 +185,7 @@
     </record>
 
 
-    <!-- Create search / filter and grouping views -->
-    <record id="view_labjournal_search_form" model="ir.ui.view">
-      <field name="name">labjournal.labjournal.search.form</field>
-      <field name="model">labjournal.labjournal</field>
-      <field name="arch" type="xml">
-	<search string="Labjournals">
-	  <field name="name"/>
-	  <field name="owner"/>
-	  <group expand="0" string="Group By">
-	    <filter name="purpose" context="{'group_by':'purpose'}"/>
-	  </group>
-	</search>
-      </field>
-    </record>
+
 
   </data>
 </openerp>
