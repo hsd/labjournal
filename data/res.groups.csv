@@ -1,0 +1,3 @@
+id,name,comment,implied_ids/id
+labjournal.group_users,Lab journal users,Normal users of labjournals,base.group_user
+labjournal.group_managers,Lab journal managers,Managers of labjournals,base.group_user
