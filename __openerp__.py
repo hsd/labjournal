@@ -11,6 +11,7 @@
     'license': 'AGPL-3',
     'depends': ['stock'],
     'data': [
+        'data/res.groups.csv',
         'security/ir.model.access.csv',
         'labjournal_view.xml',
         'labjournal_sequence.xml',

@@ -1,5 +1,5 @@
 "id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
-"access_labjournal_purpose_user","labjournal.purpose user","model_labjournal_purpose","base.group_user",1,0,0,0
-"access_labjournal_purpose_manager","labjournal.purpose manager","model_labjournal_purpose","base.group_sale_manager",1,1,1,1
-"access_labjournal_user","labjournal.labjournal user","model_labjournal_labjournal","base.group_user",1,0,0,0
-"access_labjournal_manager","labjournal.labjournal manager","model_labjournal_labjournal","base.group_sale_manager",1,1,1,1
+"access_labjournal_purpose_user","labjournal.purpose user","model_labjournal_purpose","labjournal.group_users",1,0,0,0
+"access_labjournal_purpose_manager","labjournal.purpose manager","model_labjournal_purpose","labjournal.group_managers",1,1,1,1
+"access_labjournal_user","labjournal.labjournal user","model_labjournal_labjournal","labjournal.group_users",1,0,0,0
+"access_labjournal_manager","labjournal.labjournal manager","model_labjournal_labjournal","labjournal.group_managers",1,1,1,1
